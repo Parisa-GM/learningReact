@@ -1,11 +1,12 @@
 import React from 'react'
+import { Alert } from 'antd';
 
 interface person{
     fullname:string,
     changed:any,
     deleted:any
 }
-export const ListPerson = (person:person) => {
+export const Person =  (person:person) => {
     return (
         <div className='card text-white bg-info mb-3 mt-3 w-25 mx-auto'>
             <div className='card-card-body text-center'>
@@ -20,4 +21,4 @@ export const ListPerson = (person:person) => {
         </div>
     )
 }
-export default ListPerson;
+export default Person;

@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Alert } from 'antd';
+import SimpleContext from '../../context/SimpleContext';
 
 
-export const Person = (addPerson: any) => {
+export const NewPerson = () => {
+    const context = useContext(SimpleContext);
     return (
         <div className='rtl text-center'>
             {/* <div className='alert alert-info'>
@@ -17,7 +19,7 @@ export const Person = (addPerson: any) => {
             </h5> */}
 
             <div className='m-2 p-2'>
-                <form className='form-inline justify-content-center' onSubmit={e => e.preventDefault()}>
+                <form  className='form-inline justify-content-center' onSubmit={e => e.preventDefault()}>
                     <div className='input-group w-25'>
                         <input
                          type="text" 
@@ -26,7 +28,7 @@ export const Person = (addPerson: any) => {
                            />
                         <div className='input-group-prepend'>
                             <button type="submit" className='btn btn-sm btn-success fa fa-pluse-square'
-                             onClick={addPerson} />
+                             onClick={context.handleNewPerson} />
                         </div>
                     </div>
                 </form>
