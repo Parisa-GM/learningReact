@@ -20,10 +20,10 @@ const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
 }
 
 function App() {
-  interface personModel{
-    id:number,
-    fullname:string
-  
+  interface personModel {
+    id: number,
+    fullname: string
+
   }
   const [getPersons, setPersons] = useState<personModel[]>([]);
   const [getSinglePerson, setSinglePerson] = useState("");
@@ -33,9 +33,9 @@ function App() {
     setShowPersons(!getShowPersons);
   };
 
-  const handleDeletePerson = (id:number) => {
-    const persons  = [...getPersons];    
-    const filteredPersons = persons.filter(p => p.id !== id); 
+  const handleDeletePerson = (id: number) => {
+    const persons = [...getPersons];
+    const filteredPersons = persons.filter(p => p.id !== id);
     setPersons(filteredPersons);
 
     const personIndex = persons.findIndex(p => p.id === id);
@@ -47,7 +47,7 @@ function App() {
     });
   };
 
-  const handleNameChange = (event:{ target: { value: string; }; }, id: number) => {
+  const handleNameChange = (event: { target: { value: string; }; }, id: number) => {
     // const { persons: allPersons } = getPersons;
 
     // const personIndex = allPersons.findIndex(p => p.id === id);
@@ -87,13 +87,13 @@ function App() {
   let person = null;
 
   if (getShowPersons) {
-    person = <ListPerson/>;
+    person = <ListPerson />;
   }
   return (
 
     <SimpleContext.Provider
       value={{
-        persons []: getPersons,
+        persons: getPersons,
         person: getSinglePerson,
         handleDeletePerson: handleDeletePerson,
         handleNameChange: handleNameChange,
